@@ -23,10 +23,10 @@ function createRecipeForm() {
 }
 function createRecipe() {
   console.log("create recipe")
-  let name = document.getElementsById("name").innerHTML;
+  let name = document.getElementById("name").innerHTML;
   console.log(name);
   let description = document.getElementById("description").innerHTML;
   console.log(description);
-  let ingredients = document.getElementsById("ingredients");
+  let ingredients = document.getElementById("ingredients");
   console.log(ingredients);
 }
