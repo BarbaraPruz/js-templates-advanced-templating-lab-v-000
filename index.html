@@ -16,6 +16,9 @@
           Name: <input type="text" id="name"><br>
           Description: <input type="text" id="description"><br>
           Ingredients:<br>
+            {{#each ingredients}}
+              <input type="text" id="ingredient"><br><br>
+            {{/each}}
           <input type="submit">
         </form>
       </div>
