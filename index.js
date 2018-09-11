@@ -22,7 +22,8 @@ function createRecipeForm() {
   document.getElementsByTagName("main")[0].innerHTML += result;
 }
 function createRecipe() {
-  console.log("create recipe")
+  console.log("create recipe");
+  debugger;
   let name = document.getElementById("name").innerHTML;
   console.log(name);
   let description = document.getElementById("description").innerHTML;
