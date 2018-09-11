@@ -22,5 +22,11 @@ function createRecipeForm() {
   document.getElementsByTagName("main")[0].innerHTML += result;
 }
 function createRecipe() {
-
+  console.log("create recipe")
+  let name = document.getElementById("name");
+  console.log(name);
+  let description = document.getElementById("description");
+  console.log(description);
+  let ingredients = document.getElementsById("ingredients");
+  console.log(ingredients);
 }
