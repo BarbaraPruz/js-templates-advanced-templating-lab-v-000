@@ -7,7 +7,8 @@ function initForm() {
 function createRecipe() {
   var recipe = getRecipeVals()
   var recipeTemplate = document.getElementById("recipe-template").innerHTML
-  var template = Handlebars.compile(recipeTemplate)
+  var template = Handlebars.compile(recipeTemplate);
+  // replace main contents (recipe form) with the recipe template
   document.getElementById("main").innerHTML = template(recipe)
 }
 
@@ -19,7 +20,7 @@ function updateRecipe() {
 }
 
 function displayEditForm() {
-  var name = document.getElementById("nameHeader").innerText
+  var name = document.getElementById("recipeName").innerText
   var description = document.getElementById("recipeDescription").innerText
   var ingredientsNodes = document.getElementsByName("ingredientsList")
   var ingredients = []
@@ -48,21 +49,14 @@ function getRecipeVals() {
   return(recipe)
 }
 
-function handlebarsSetup() {
+$( document ).ready(function() {
   //put any handlebars registrations here.
   Handlebars.registerHelper('displayIngredient', function(ingredient) {
     return new Handlebars.SafeString('<li name="ingredientsList">' + ingredient + '</li>')
   })
   Handlebars.registerPartial('recipeDetailsPartial', document.getElementById("recipe-details-partial").innerHTML)
   Handlebars.registerPartial('recipeFormPartial', document.getElementById("recipe-form-partial").innerHTML)
-}
 
-
-function init() {
-  //put any page initialization/handlebars initialization here
-  handlebarsSetup()
   initForm()
-}
-document.addEventListener("DOMContentLoaded", function(event) {
-  init()
-})
+});
+
