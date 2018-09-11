@@ -1,7 +1,7 @@
 function initForm() {
   var formTemplate = document.getElementById("recipe-form-template").innerHTML;
   var template = Handlebars.compile(formTemplate);
-  document.getElementsByTagName("main").innerHTML = template({'action': 'createRecipe()'});
+  document.getElementsByTagName("main")[0].innerHTML = template({'action': 'createRecipe()'});
 }
 
 function createRecipe() {
