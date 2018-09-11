@@ -1,8 +1,6 @@
 function initForm() {
   var formTemplate = document.getElementById("recipe-form-template").innerHTML;
-  console.log("formTemplate",formTemplate);
   var template = Handlebars.compile(formTemplate);
-  console.log("template",template);
   document.getElementsByTagName("main")[0].innerHTML = template({'action': 'createRecipe()'});
 }
 
@@ -50,15 +48,14 @@ function getRecipeVals() {
   var recipe = {name, ingredients, description}
   return(recipe)
 }
-
+// instead of jquery, can use following; document.addEventListener("DOMContentLoaded", function(event) {
 $( document ).ready(function() {
   //put any handlebars registrations here.
-  console.log("ready");
   Handlebars.registerHelper('displayIngredient', function(ingredient) {
     return new Handlebars.SafeString('<li name="ingredientsList">' + ingredient + '</li>')
   })
   Handlebars.registerPartial('recipeDetailsPartial', document.getElementById("recipe-details-partial").innerHTML)
   Handlebars.registerPartial('recipeFormPartial', document.getElementById("recipe-form-partial").innerHTML)
-  console.log("handlebars init");
+
   initForm()
 });
