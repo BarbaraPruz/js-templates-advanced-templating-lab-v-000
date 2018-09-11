@@ -5,7 +5,7 @@ function initForm() {
 }
 
 function createRecipe() {
-  var recipe = getRecipeVals();
+  var recipe = getRecipe();
   var recipeTemplate = document.getElementById("recipe-template").innerHTML
   var template = Handlebars.compile(recipeTemplate);
   // replace main contents (recipe form) with the recipe template
@@ -13,7 +13,7 @@ function createRecipe() {
 }
 
 function updateRecipe() {
-  var recipe = getRecipeVals();
+  var recipe = getRecipe();
   var recipeTemplate = document.getElementById("recipe-template").innerHTML
   var template = Handlebars.compile(recipeTemplate)
   document.getElementById("main").innerHTML = template(recipe)
@@ -35,7 +35,7 @@ function displayEditForm() {
   document.getElementById("main").innerHTML = template(recipe)
 }
 
-function getRecipeVals() {
+function getRecipe() {
   var ingredientsNodes = document.getElementsByName("ingredients")
   var ingredients = []
   for(var i=0;i<ingredientsNodes.length;i++) {
