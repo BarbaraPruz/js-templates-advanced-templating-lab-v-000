@@ -23,9 +23,9 @@ function createRecipeForm() {
 }
 function createRecipe() {
   console.log("create recipe")
-  let name = document.getElementById("name");
+  let name = document.getElementsById("name").innerHTML;
   console.log(name);
-  let description = document.getElementById("description");
+  let description = document.getElementById("description").innerHTML;
   console.log(description);
   let ingredients = document.getElementsById("ingredients");
   console.log(ingredients);
